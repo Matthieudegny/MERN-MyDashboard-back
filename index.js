@@ -28,15 +28,28 @@ app.use("/api/product", product);
 //   console.log(`sever is running in port ${PORT}`);
 // });
 
-const startServer = async () => {
-  try {
-    await connectDB();
+mongoose
+  .connect(process.env.MONGODB_URL)
+  .then(() => {
+    console.log("Mongodb connected");
     app.listen(PORT, () => {
-      console.log(`Server running on port ${PORT}`);
+      console.log(`Server is listening on PORT ${PORT}`);
     });
-  } catch (error) {
-    console.log(error);
-  }
-};
+  })
+  .catch((err) => {
+    console.log({ err });
+    process.exit(1);
+  });
 
-startServer();
+// const startServer = async () => {
+//   try {
+//     await connectDB();
+//     app.listen(PORT, () => {
+//       console.log(`Server running on port ${PORT}`);
+//     });
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
+
+// startServer();
