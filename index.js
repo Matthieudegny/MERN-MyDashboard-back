@@ -10,9 +10,9 @@ const app = express();
 
 //middleware
 //pour accéder aux bodys des requests
-app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+// app.use(cors());
+// app.use(express.json());
+// app.use(express.urlencoded({ extended: false }));
 
 //routes
 // app.use("/api/user", userRoutes);
