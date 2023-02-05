@@ -1,7 +1,7 @@
 const dotenv = require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
-const connectDB = require("./config/connectDB");
+// const connectDB = require("./config/connectDB");
 // const cors = require("cors");
 
 const app = express();
