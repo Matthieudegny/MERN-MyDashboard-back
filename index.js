@@ -24,19 +24,19 @@ const product = require("./api/product");
 
 app.use("/api/product", product);
 
-app.listen(PORT, () => {
-  console.log(`sever is running in port ${PORT}`);
-});
+// app.listen(PORT, () => {
+//   console.log(`sever is running in port ${PORT}`);
+// });
 
-// const startServer = async () => {
-//   try {
-//     await connectDB();
-//     app.listen(PORT, () => {
-//       console.log(`Server running on port ${PORT}`);
-//     });
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
+const startServer = async () => {
+  try {
+    await connectDB();
+    app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}`);
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
 
-// startServer();
+startServer();
