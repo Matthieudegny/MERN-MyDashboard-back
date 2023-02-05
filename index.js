@@ -15,20 +15,28 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 //routes
-app.use("/api/user", userRoutes);
-app.use("/api/dashboard", dashboardRoutes);
+// app.use("/api/user", userRoutes);
+// app.use("/api/dashboard", dashboardRoutes);
 
 const PORT = process.env.PORT || 5000;
 
-const startServer = async () => {
-  try {
-    await connectDB();
-    app.listen(PORT, () => {
-      console.log(`Server running on port ${PORT}`);
-    });
-  } catch (error) {
-    console.log(error);
-  }
-};
+const product = require("./api/product");
 
-startServer();
+app.use("/api/product", product);
+
+app.listen(PORT, () => {
+  console.log(`sever is running in port ${PORT}`);
+});
+
+// const startServer = async () => {
+//   try {
+//     await connectDB();
+//     app.listen(PORT, () => {
+//       console.log(`Server running on port ${PORT}`);
+//     });
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
+
+// startServer();
