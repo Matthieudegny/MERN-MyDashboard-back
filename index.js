@@ -19,25 +19,21 @@ const userRoutes = require("./api/routes/user");
 //   })
 // );
 
-const corsOptions = {
-  origin: [
-    "http://localhost:3000",
-    "https://my-dash-board-md.vercel.app/",
-    "https://my-dashboard-1h54ooj65-matthieudegny.vercel.app",
-  ],
-};
+// const corsOptions = {
+//   origin: [
+//     "http://localhost:3000",
+//     "https://my-dash-board-md.vercel.app/",
+//     "https://my-dashboard-1h54ooj65-matthieudegny.vercel.app",
+//   ],
+// };
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 //routes
-app.use("/api/user", userRoutes, cors(corsOptions));
-app.use("/api/dashboard", dashboardRoutes, cors(corsOptions));
+app.use("/api/user", userRoutes);
+app.use("/api/dashboard", dashboardRoutes);
 
 const PORT = process.env.PORT || 5000;
-
-const product = require("./api/product");
-
-app.use("/api/product", product);
 
 mongoose
   .connect(process.env.MONGO_URI)
