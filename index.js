@@ -11,7 +11,11 @@ const userRoutes = require("./api/routes/user");
 //pour accéder aux bodys des requests
 app.use(
   cors({
-    origin: ["http://localhost:3000", "https://my-dash-board-md.vercel.app/"],
+    origin: [
+      "http://localhost:3000",
+      "https://my-dash-board-md.vercel.app/",
+      "my-dashboard-1h54ooj65-matthieudegny.vercel.app",
+    ],
   })
 );
 app.use(express.json());
