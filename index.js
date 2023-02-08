@@ -9,7 +9,11 @@ const userRoutes = require("./api/routes/user");
 
 //middleware
 //pour accéder aux bodys des requests
-app.use(cors());
+app.use(
+  cors({
+    origin: ["http://localhost:3000", "https://my-dash-board-md.vercel.app/"],
+  })
+);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
@@ -23,10 +27,6 @@ const product = require("./api/product");
 
 app.use("/api/product", product);
 
-// app.listen(PORT, () => {
-//   console.log(`sever is running in port ${PORT}`);
-// });
-
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => {
@@ -39,16 +39,3 @@ mongoose
     console.log({ err });
     process.exit(1);
   });
-
-// const startServer = async () => {
-//   try {
-//     await connectDB();
-//     app.listen(PORT, () => {
-//       console.log(`Server running on port ${PORT}`);
-//     });
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
-
-// startServer();
