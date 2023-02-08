@@ -14,7 +14,7 @@ app.use(
     origin: [
       "http://localhost:3000",
       "https://my-dash-board-md.vercel.app/",
-      "my-dashboard-1h54ooj65-matthieudegny.vercel.app",
+      "https://my-dashboard-1h54ooj65-matthieudegny.vercel.app",
     ],
   })
 );
