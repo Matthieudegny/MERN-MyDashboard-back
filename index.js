@@ -9,23 +9,8 @@ const userRoutes = require("./api/routes/user");
 
 //middleware
 //pour accéder aux bodys des requests
-// app.use(
-//   cors({
-//     origin: [
-//       "http://localhost:3000",
-//       "https://my-dash-board-md.vercel.app/",
-//       "https://my-dashboard-1h54ooj65-matthieudegny.vercel.app",
-//     ],
-//   })
-// );
+app.use(cors());
 
-// const corsOptions = {
-//   origin: [
-//     "http://localhost:3000",
-//     "https://my-dash-board-md.vercel.app/",
-//     "https://my-dashboard-1h54ooj65-matthieudegny.vercel.app",
-//   ],
-// };
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
